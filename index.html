@@ -1,44 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Synth Garden</title>
-
-  <!-- Libraries -->
-  <script src="js/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
-  <script src="js/sketch.js"></script>
-
+  <title>Synth Garden 🌼</title>
   <style>
     body {
-      margin: 0;
-      font-family: "Comic Sans MS", cursive, sans-serif;
-      background-color: #ffefe8; /* soft peachy pink */
-      text-align: center;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fffaf2;
+      color: #2c3e50;
+      padding: 40px;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
     }
-
     h1 {
-      color: #5a8f5c;
-      font-size: 2.5em;
-      margin: 20px 0;
+      color: #2b7a3d;
+      font-size: 2.8em;
     }
-
-    canvas {
-      display: block;
-      margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    h2 {
+      color: #406343;
+      margin-top: 2em;
+    }
+    p, li {
+      font-size: 1.1em;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    code {
+      background-color: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
-
 <body>
   <h1>Synth Garden 🌼</h1>
-  <script src="js/sketch.js"></script>
+
+  <p><strong>Synth Garden</strong> is an interactive digital ecosystem that simulates a plant’s growth using data from a potentiometer connected to an Arduino. With visual and audio feedback through p5.js and Tone.js, this project blends real-world sensor input with immersive graphics and ambient sound design.</p>
+
+  <h2>🔧 Project Components</h2>
+  <ul>
+    <li><strong>Arduino Uno R3</strong> with potentiometer & RGB LED</li>
+    <li><strong>p5.js</strong> for interactive visuals in the browser</li>
+    <li><strong>Tone.js</strong> for sound synthesis and ambiance</li>
+    <li><strong>Node.js</strong> server to bridge Arduino data to the browser</li>
+  </ul>
+
+  <h2>🧠 How It Works</h2>
+  <ol>
+    <li>The potentiometer simulates light levels for the digital plant.</li>
+    <li>The Arduino reads the analog value and sends it over serial.</li>
+    <li>The Node.js server relays this data to the browser using socket.io.</li>
+    <li>p5.js visualizes plant growth based on the input.</li>
+    <li>Tone.js plays audio cues for healthy, dangerous, and win/lose states.</li>
+  </ol>
+
+  <h2>📦 Running the Project Locally</h2>
+  <p>To run the full version locally with serial input:</p>
+  <pre><code>1. Upload the .ino code to your Arduino.
+2. Run the server:
+   node server.js
+3. Open index.html in your browser.</code></pre>
+
+  <h2>📈 Future Ideas</h2>
+  <ul>
+    <li>Visual health bar and flower blooming animation</li>
+    <li>Weather effects like rain and sunlight beams</li>
+    <li>Multiplayer garden interaction</li>
+    <li>Save progress between sessions using browser storage</li>
+  </ul>
+
+  <div class="footer">
+    <p>Created by Chloe Gray | CSC 2463 – Spring 2025</p>
+  </div>
 </body>
 </html>
